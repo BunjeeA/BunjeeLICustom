@@ -31,4 +31,4 @@ Project Steps:
     3a. This should run an INFINITE amount of times.
 5. (BONUS)Animate the button gradually so it eventually has no corners(HINT: Border Radius)
     4a. This should run an INFINITE amount of times.
-6. (BONUS)Animate the button to do Steps 2-4 all at the same time.
+6. (BONUS)Animate the button to do Steps 3-5 all at the same time.
