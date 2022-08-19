@@ -19,23 +19,37 @@ button{
 }
 
 .button{
+/* names the animation */
     animation-name: bColor;
+/* sets the length of the animation */
     animation-duration: 10s;
-    /* animation-iteration-count: infinite; */
-    /* animation-timing-function: linear; */
-    /* animation-delay: 2s; */
-    /* animation-fill-mode: forwards; */
-    /* animation: test 10s linear 2s infinite forwards; */
+/* sets how many times the animation should run */
+    animation-iteration-count: infinite; 
+/* specifies the speed-curve of the animation (how gradual the animation is) */
+    animation-timing-function: linear;
+/* delays the start of the animation */
+    animation-delay: 2s;
+/* specifies the style of an element when animation is not running */
+    animation-fill-mode: forwards;
+/* condenses the above lines of code */
+/*     animation: bColor 10s linear 2s infinite forwards; */
 }
 
+/* animation to change the background color of the button */
 @keyframes bColor {
+/* at zero percent of the duration, make the background color red */
     0%   {background-color: red;}
+/* at 25 percent of the duration, make the background color yellow */
     25%  {background-color: yellow;}
+/* at 50 percent of the duration, make the background color blue */
     50%  {background-color: blue;}
+/* at 75 percent of the duration, make the background color green */
     75%  {background-color: green;}
+/* at 100 percent of the duration, make the background color red */
     100% {background-color: red;}
 }
 
+/* animation to change the position of the button */
 @keyframes position {
     0%   {left:0px; top:0px;}
     25%  {left:300px; top:300px;}
@@ -44,6 +58,7 @@ button{
     100% {left:0px; top:0px;}
 }
 
+/* animation that changes BOTH the background color and the position of the button */
 @keyframes both {
     0%{
         background-color:red;
@@ -67,6 +82,7 @@ button{
     }
 }
 
+/* typewriter effect */
 .typewriter h1 {
     padding: 10px;
     font-family: 'Bebas Neue', cursive;
