@@ -1,95 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-body{
-    margin: auto;
+body {
     display: flex;
-    flex-direction: column;
-    background-color:bisque;
     justify-content: center;
-    align-items: center;
 }
 
-button{
-    padding: 10px;
-    background-color: red;
-    width: 100px;
-    border-radius: 0px;
-    height: 50px;
-    position: relative;
-}
-
-.button{
-    animation-name: bColor;
-    animation-duration: 10s;
-    /* animation-iteration-count: infinite; */
-    /* animation-timing-function: linear; */
-    /* animation-delay: 2s; */
-    /* animation-fill-mode: forwards; */
-    /* animation: test 10s linear 2s infinite forwards; */
-}
-
-@keyframes bColor {
-    0%   {background-color: red;}
-    25%  {background-color: yellow;}
-    50%  {background-color: blue;}
-    75%  {background-color: green;}
-    100% {background-color: red;}
-}
-
-@keyframes position {
-    0%   {left:0px; top:0px;}
-    25%  {left:300px; top:300px;}
-    50% {left:300px; top:500px;}
-    75% {left:-400px; top:250px;}
-    100% {left:0px; top:0px;}
-}
-
-@keyframes both {
-    0%{
-        background-color:red;
-        left:0px; top:0px;
-    }
-    25%{
-        background-color:yellow;
-        left:300px; top:300px;
-    }
-    50%{
-        background-color:blue; 
-        left:300px; top:500px;
-    }
-    75%{
-        background-color:green; 
-        left:-400px; top:250px;
-    }
-    100%{
-        background-color:red; 
-        left:0px; top:0px;
-    }
-}
-
+/*The message inside of the typewriter*/
 .typewriter h1 {
     padding: 10px;
-    font-family: 'Bebas Neue', cursive;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    overflow: hidden;/* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    margin-bottom: 50px;
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 5s steps(40, end) infinite , 
-      blink-caret .75s step-end infinite;
-  }
-  
-  /* The typing effect */
-  @keyframes typing {
-    40% { width: 0 }
-    80% { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
-  }
+    white-space: nowrap;/* Keeps the content on a single line */
+    margin: 0 auto;/* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;/* Adjusts the spacing between letters */
+    /* Animation Calls */
+    animation:
+        typing 5s steps(40, end) 2s 100,
+        blink-caret .75s step-end infinite;
+}
 
+/* The typing effect */
+@keyframes typing {
+    0% {
+        width: 0
+    }
+
+    50% {
+        width: 100%
+    }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: fixed;
+    right: 20px;
+    top:20px;
+    display: block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1F1F1F;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+/* Before the slider is clicked/moved */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-image: url(images/moonIcon.png);
+    background-color: #ccc;
+    background-size: contain;
+    transition: .4s;
+}
+/* Changing the background color of the input */
+input:checked+.slider {
+    background-color: #ccc;
+}
+
+/* Animating the slider within the input */
+input:checked+.slider:before {
+    transform: translateX(26px);
+    background-color: #1F1F1F;
+    background-image: url(images/sunIcon.png);
+    background-size: contain;
+}
+
+/* Rounded input */
+.slider.round {
+    border-radius: 34px;
+}
+
+/* Rounded slider */
+.slider.round:before {
+    border-radius: 50%;
+}
