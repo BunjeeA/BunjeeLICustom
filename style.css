@@ -1,6 +1,9 @@
 body {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    color:white;
 }
 
 .typewriter h1 {
@@ -12,8 +15,8 @@ body {
     letter-spacing: .15em;/* Adjusts the spacing between letters */
     /* Animation Calls */
     animation:
-        typing 5s steps(40, end) 2s 100,
-        blink-caret .75s step-end infinite;
+        typing 5s steps(40, end) 2s 100, /* Writing out the letters in the message */
+        blink-caret .75s step-end infinite; /* The blinking of the right-border */
 }
 
 /* The typing effect */
@@ -28,7 +31,6 @@ body {
 }
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-
     from,
     to {
         border-color: transparent;
