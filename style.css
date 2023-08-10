@@ -3,7 +3,6 @@ body {
     justify-content: center;
 }
 
-/*The message inside of the typewriter*/
 .typewriter h1 {
     padding: 10px;
     overflow: hidden;/* Ensures the content is not revealed until the animation */
